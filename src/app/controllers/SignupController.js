@@ -5,12 +5,12 @@ const { FALSE } = require("node-sass");
 class SignupController {
   //[GET] /signup
   index(req, res) {
-    res.render("signup", {  style: "app.css" });
+    res.render("signup", {  style: "app.css", unloggin: true });
   }
 
   //[POST] /signup/
   async store(req, res) {
-    console.log(req);
+    // console.log(req);
     const formData = {
       name: req.body.name,
       email: req.body.email,
