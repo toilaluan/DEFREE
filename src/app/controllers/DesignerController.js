@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const Job = require("../models/Job");
-const Recruiter = require("../models/Recruiter")
+const User = require("../models/User")
 class DesignController {
 	index(req, res) {
 		res.json({ result: "success" });
@@ -17,7 +17,7 @@ class DesignController {
 						job.detail_link = detail_link;
 						return job;
 					});
-					res.render("designer/show_job", { jobs });
+					res.render("designer/show_job", { jobs, unloggin: !req.session.loggedin });
 				}
 			});
 	}
@@ -25,7 +25,7 @@ class DesignController {
         const query = req.query
         Job.findById(query.id, (err, job) => {
             job = job.toObject()
-            res.render("designer/read_job", {content: job.jd})
+            res.render("designer/read_job", {content: job.jd, unloggin: !req.session.loggedin})
         })
     }
 }

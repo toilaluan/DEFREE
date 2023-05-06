@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 const Job = new Schema({
 	user: {
 		type: mongoose.Types.ObjectId,
-		ref: "Recruiter"
+		ref: "User"
 	},
 	job_type: {
 		type: String,

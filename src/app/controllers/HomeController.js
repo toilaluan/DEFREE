@@ -1,11 +1,6 @@
 class HomeController {
 	index(req, res) {
-		if(!req.session.loggedin){
-			res.render("home",{unloggin: true});
-		}
-		else{
-			res.render("home",{unloggin: false});
-		}
+		res.render("home",{unloggin: !req.session.loggedin});
 	}
 }
 
