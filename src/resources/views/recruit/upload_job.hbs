@@ -1,0 +1,115 @@
+<link rel="stylesheet" href="/css/upload_job.css" />
+<script
+	src="https://cdn.tiny.cloud/1/2ghf5vuw6s4a1edo397xq49r3h5ofbw2yziepz69v5treufg/tinymce/6/tinymce.min.js"
+	referrerpolicy="origin"
+></script>
+<script>
+  tinymce.init({
+    selector: 'textarea#editor',
+    skin: 'bootstrap',
+    plugins: 'lists, link, image, media',
+    toolbar: 'h1 h2 bold italic strikethrough blockquote bullist numlist backcolor | link image media | removeformat help',
+    menubar: false,
+  });
+</script>
+
+<div class="form-body">
+	<div class="row">
+		<div class="form-holder">
+			<div class="form-content">
+				<div class="form-items">
+					<h3>Mô tả công việc</h3>
+					<p>Điền đầy đủ thông tin dưới đây</p>
+					<form
+						class="requires-validation"
+						novalidate
+						method="POST"
+						action="/recruiter/save-job"
+					>
+						<div class="col-md-12">
+							<select
+								class="form-select mt-3"
+								required
+								name="job_type"
+							>
+								<option selected disabled value="">Loại công
+									việc</option>
+								<option>Thiết kế logo</option>
+								<option>Thiết kế đồ họa</option>
+								<option>Banner quảng cáo</option>
+							</select>
+							<div class="valid-feedback">You selected a position!</div>
+							<div class="invalid-feedback">Please select a
+								position!</div>
+						</div>
+						<div class="col-md-12 mt-3">
+							<label for="editor">JD</label>
+							<div class="form-group">
+								<textarea id="editor" name="jd"></textarea>
+							</div>
+						</div>
+						<div class="col-md-12 mt-3">
+							<label for="startDate">Deadline hoàn thành</label>
+							<input
+								id="startDate"
+								class="form-control"
+								type="date"
+								name="deadline"
+							/>
+						</div>
+						<div class="col-md-12 mt-3">
+							<label for="startDate">Mức lương (VNĐ)</label>
+							<input
+								type="number"
+								min="0"
+								step="10000"
+								value="100000"
+								id="exampleInputAmount"
+								class="form-control"
+								placeholder="Price"
+								name="wage"
+							/>
+						</div>
+						<div class="col-md-12">
+							<select
+								class="form-select mt-3"
+								required
+								name="method_pay_wage"
+							>
+								<option selected disabled value="">Hình thức trả
+									lương</option>
+								<option>Theo giờ</option>
+								<option>Theo dự án</option>
+								<option>Theo tháng</option>
+							</select>
+							<div class="valid-feedback">You selected a position!</div>
+							<div class="invalid-feedback">Please select a
+								position!</div>
+						</div>
+						<div class="form-check mt-3">
+							<input
+								class="form-check-input"
+								type="checkbox"
+								value=""
+								id="invalidCheck"
+								required
+							/>
+							<label class="form-check-label">I confirm that all
+								data are correct</label>
+							<div class="invalid-feedback">Please confirm that
+								the entered data are all correct!</div>
+						</div>
+
+						<div class="form-button mt-3">
+							<button
+								id="submit"
+								type="submit"
+								class="btn btn-primary"
+							>Xác nhận</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
