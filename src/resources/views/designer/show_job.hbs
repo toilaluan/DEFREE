@@ -1,25 +1,31 @@
-<div class="container mt-5 mb-3">
+<link rel="stylesheet" href="/css/upload_job.css" />
+<div class="container mt-3 mb-3">
 	<div class="row">
 		{{#each jobs}}
 			<div class="col-sm-6 col-lg-4">
 				<div class="card p-3 mb-2">
+					<img
+						src="https://images.pexels.com/photos/57690/pexels-photo-57690.jpeg?cs=srgb&dl=pexels-ovan-57690.jpg&fm=jpg"
+						alt="Card image cap"
+						height="150px"
+					/>
 					<div class="d-flex justify-content-between">
 						<div class="d-flex flex-row align-items-center">
 							<div class="icon">
 								<i class="bx bxl-mailchimp"></i>
 							</div>
-							<div class="ms-2 c-details">
+							<div class="ms-2 c-details mt-3">
 								<h6 class="mb-0">{{this.organization}}</h6>
-								<span>1 days ago</span>
+								<span>{{this.created_at}}</span>
 							</div>
 						</div>
-						<div class="badge"> <span>Design</span> </div>
 					</div>
-					<div class="mt-5">
+					<div class="mt-3">
 						<h3 class="heading">{{this.job_type}}<br
 							/>{{this.user.location}}</h3>
-						<h5> upto {{this.wage}} VNĐ </h5>
-						<a href={{this.detail_link}} class="btn btn-primary">Xem thêm</a>
+						<h6> upto {{this.wage}} VNĐ </h6>
+						<a href={{this.detail_link}} class="btn btn-primary">Xem
+							thêm</a>
 						<div class="mt-5">
 							<div class="progress">
 								<div

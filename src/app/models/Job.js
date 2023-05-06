@@ -12,6 +12,7 @@ const Job = new Schema({
 		required: true,
 	},
 	jd: String,
+	organization: String,
 	required_skill: String,
 	deadline: {
 		type: String,
