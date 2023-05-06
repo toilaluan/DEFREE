@@ -10,7 +10,6 @@ class SignupController {
 
   //[POST] /signup/
   async store(req, res) {
-    // console.log(req);
     const formData = {
       name: req.body.name,
       email: req.body.email,

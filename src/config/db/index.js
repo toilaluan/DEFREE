@@ -4,7 +4,7 @@ mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 async function connect() {
   try {
-    await mongoose.connect("mongodb://127.0.0.1/doc_stock", {
+    await mongoose.connect("mongodb://127.0.0.1/defree", {
       useUnifiedTopology: true,
       useNewUrlParser: true,
     });
