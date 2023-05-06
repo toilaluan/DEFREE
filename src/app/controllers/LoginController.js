@@ -1,34 +1,26 @@
 const User = require('../models/User')
 
-
 function encode(s) {
     return s;
 }
 class LoginController {
     index(req, res) {
-        res.render('login', { style: 'app.css' });
+        res.render('login', { style: 'app.css',unloggin: true });
     }
     checkLogin(req, res) {
         // Insert Login Code Here
-
-
         let username = req.body.username
         let password = req.body.password
         if (username == '' || password == '') {
             return res.redirect("/");
         }
-
         // encode username,password
         password = encode(password);
-
-
         /// Do User chi co 1 ten tai khoan nen khi tra ve mang ta dung luon user[0]
         User.find({ username: username }, (err, user) => {
             if (user.length ==0) {         
                 return res.redirect("/login");
             }
-
-
             if (user[0].password == password) {
                 req.session.loggedin = true;
                 req.session.user = user;
@@ -39,7 +31,6 @@ class LoginController {
                 console.log("Password Invalid");
                 return "Password Invalid";
             }
-
         });
     }
     logout = (req, res) => {

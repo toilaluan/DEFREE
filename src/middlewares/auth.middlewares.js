@@ -10,7 +10,7 @@ class Middlewares{
     isAuth = (req, res, next) => {
         if (req.session.loggedin) {
             res.locals.user = req.session.user
-            res.redirect('/home');
+            res.redirect('/');
         } else {
             next();
         }

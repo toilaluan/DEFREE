@@ -23,16 +23,23 @@
     <!-- MDB -->
     <link rel="stylesheet" href="/css/mdb.min.css" />
     <link rel="stylesheet" href="/css/app.css">
-    <link rel="stylesheet" href="/css/chat.css">
+    <link rel="stylesheet" href="/css/{{css}}">
 </head>
 
 <body>
+    {{#if unloggin}}
     {{> header}}
+    {{/if}}
+    {{#unless unloggin}}
+    {{> header_loggined}}
+    {{/unless}}
     <div class="container text-left">
         <div class="row justify-content-md-center">
+            
             <div class="col-md-auto">
                 {{> left_sidebar}}
             </div>
+  
             <div class="col">
                 {{{body}}}
             </div>
