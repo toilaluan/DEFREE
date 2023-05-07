@@ -2,7 +2,7 @@ const Job = require("../models/Job");
 const mongoose = require("mongoose");
 class RecruitController {
 	index(req, res) {
-		res.render("recruit/upload_job", {unloggin: !req.session.loggedin});
+		res.render("recruit/upload_job", { unloggin: !req.session.loggedin });
 	}
 	save_job(req, res) {
 		const body = req.body;

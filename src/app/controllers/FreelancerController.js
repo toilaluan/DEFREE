@@ -12,6 +12,7 @@ class FreelancerController{
               })
               res.render('freelancer',{
                 users,
+                unloggin: !req.session.loggedin,
                 css:'freelancer.css'
                 });
             })

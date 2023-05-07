@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap');
 
 *, body {
-    font-family: 'Poppins', sans-serif;
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
@@ -10,7 +9,8 @@
 
 html, body {
     height: 100%;
-    background-color: #cac034;
+    background-color: #152733;
+    /* overflow: hidden; */
 }
 
 
@@ -43,7 +43,7 @@ html, body {
     padding: 40px;
     display: inline-block;
     width: 100%;
-    min-width: 540px;
+    min-width: 800px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
@@ -96,7 +96,7 @@ html, body {
 
 
 .btn-primary{
-    background-color: #7d7d6c;
+    background-color: #6C757D;
     outline: none;
     border: 0px;
      box-shadow: none;
