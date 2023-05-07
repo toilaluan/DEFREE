@@ -5,7 +5,7 @@ const { FALSE } = require("node-sass");
 class SignupController {
   //[GET] /signup
   index(req, res) {
-    res.render("signup", {  style: "app.css", unloggin: true });
+    res.render("signup", {  style: "app.css", unloggin:  !req.session.loggedin });
   }
 
   //[POST] /signup/

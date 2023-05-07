@@ -5,7 +5,7 @@ function encode(s) {
 }
 class LoginController {
     index(req, res) {
-        res.render('login', { style: 'app.css',unloggin: true });
+        res.render('login', { style: 'app.css',unloggin:  !req.session.loggedin });
     }
     checkLogin(req, res) {
         // Insert Login Code Here
