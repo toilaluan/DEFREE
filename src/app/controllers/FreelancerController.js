@@ -5,7 +5,9 @@ class FreelancerController{
 		User.find({})
             .then(users =>{
               users = users.map((user)=>{
+                const detaillink = "/profile?id=" + user._id;
                 user = user.toObject();
+                user.detaillink = detaillink;
                 return user;
               })
               res.render('freelancer',{

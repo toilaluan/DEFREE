@@ -1,5 +1,4 @@
 const User = require("../models/User");
-const Doc = require("../models/Doc");
 const Job = require("../models/Job"); 
 
 class ProfileController {
@@ -9,7 +8,6 @@ class ProfileController {
 			.exec((err, jobs) => {
 				if (!err) {
 					jobs = jobs.map((job) => {
-                            // const detail_link = "/designer/read_job?id=" + job._id;
                             job = job.toObject();
                             job.exist = true;
                         
@@ -30,8 +28,20 @@ class ProfileController {
                         }
                         job_row[i] = job_column
                     }
+                    const query = req.query;
+                   
+                    if(query.id){
+                        User.findById(query.id,(err,user_id)=>{
+                            user_id = user_id.toObject();
+                            res.render("profile2",{user : user_id, prj : job_row ,unloggin:  !req.session.loggedin, css: 'profile.css'});
+                        })
+                    }
+                    else{
+                        let user_id = req.session.user
+                        user_id = user_id[0]
+                        res.render("profile2",{user : user_id, prj : job_row ,unloggin:  !req.session.loggedin, css: 'profile.css'});
+                    }
                     
-					res.render("profile2",{prj : job_row ,unloggin:  !req.session.loggedin, css: 'profile.css'});
 				}
 			});
         
