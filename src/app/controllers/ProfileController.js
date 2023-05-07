@@ -12,10 +12,10 @@ class ProfileController {
                             // const detail_link = "/designer/read_job?id=" + job._id;
                             job = job.toObject();
                             job.exist = true;
-                            // job.created_at = job.created_at.toDateString();
-                            // job.detail_link = detail_link;
+                        
 						return job;
 					});
+                    /// SAU Nay se cho chon Jobs nao dc hien
                     let job_row =[];
                     for (let i = 0; i < 2; i++) {
                         let job_column =[];

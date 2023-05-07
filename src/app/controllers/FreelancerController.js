@@ -3,11 +3,17 @@ const User = require("../models/User")
 class FreelancerController{
     index(req, res,next) {
 		User.find({})
-            .then(users => res.render('freelancer',{
-            users,
-            css:'freelancer.css'
-            }))
-            .catch(next);
+            .then(users =>{
+              users = users.map((user)=>{
+                user = user.toObject();
+                return user;
+              })
+              res.render('freelancer',{
+                users,
+                css:'freelancer.css'
+                });
+            })
+            // .catch(next);
 	}
 
         

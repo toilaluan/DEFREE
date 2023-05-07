@@ -10,7 +10,8 @@ const User = new Schema({
 	kinang: String,
 	cacduan: String,
 	Soluongfollow: Number,
-
+	email: String,
+	phonenumber: String,
 });
 
 module.exports = mongoose.model("User", User);
