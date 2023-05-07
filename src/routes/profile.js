@@ -3,6 +3,6 @@ const router = express.Router();
 const profileController = require("../app/controllers/ProfileController");
 const authMiddleware = require("../middlewares/auth.middlewares");
 
-router.use("/", authMiddleware.loggedin, profileController.index);
+router.use("/",  profileController.index); //authMiddleware.loggedin,
 
 module.exports = router;
